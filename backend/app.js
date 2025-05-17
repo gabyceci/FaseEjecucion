@@ -4,9 +4,10 @@ import clientsRoutes from "./src/routes/clients.js";
 import employeesRoutes from "./src/routes/employees.js"
 import moviesRoutes from "./src/routes/movies.js"
 import loginRoutes from './src/routes/login.js'
-import registerClients from './src/routes/registerClients.js'
-import logout from './src/routes/logout.js'
-import registerEmployee from './src/routes/registerEmployees.js'
+import registerClientsRoutes from './src/routes/registerClients.js'
+import logoutRoutes from './src/routes/logout.js'
+import registerEmployeeRoutes from './src/routes/registerEmployees.js'
+import recoveryPasswordRoutes from './src/routes/recoveryPassword.js'
 
 import cookieParser from "cookie-parser";
 
@@ -23,9 +24,11 @@ app.use("/api/clients", clientsRoutes);
 app.use("/api/employees", employeesRoutes);
 app.use("/api/movies", moviesRoutes)
 app.use("/api/login", loginRoutes)
-app.use("/api/logout", logout)
-app.use("/api/registerClients", registerClients)
-app.use("/api/registerEmployees", registerEmployee)
+app.use("/api/logout", logoutRoutes)
+app.use("/api/registerClients", registerClientsRoutes)
+app.use("/api/registerEmployees", registerEmployeeRoutes)
+app.use("/api/recoveryPassword", recoveryPasswordRoutes)
+
 
 
 
