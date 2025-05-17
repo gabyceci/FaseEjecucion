@@ -35,75 +35,23 @@ const sendEmail = async (to, subject, body, html) => {
 
 const HTMLRecoveryEmail = (code) => {
     return `
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 0;
-            }
-            .email-container {
-                max-width: 600px;
-                margin: 20px auto;
-                background: #ffffff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            .header {
-                text-align: center;
-                font-size: 24px;
-                color: #333333;
-                margin-bottom: 20px;
-            }
-            .content {
-                font-size: 16px;
-                color: #555555;
-                line-height: 1.5;
-                margin-bottom: 20px;
-            }
-            .button {
-                display: inline-block;
-                padding: 10px 20px;
-                font-size: 16px;
-                color: #ffffff;
-                background-color: #007bff;
-                text-decoration: none;
-                border-radius: 5px;
-                text-align: center;
-            }
-            .footer {
-                text-align: center;
-                font-size: 12px;
-                color: #aaaaaa;
-                margin-top: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="email-container">
-            <div class="header">Recuperación de Contraseña</div>
-            <div class="content">
-                Hola,<br><br>
-                Hemos recibido una solicitud para restablecer tu contraseña. Usa el siguiente código para completar el proceso de recuperación:
-                <br><br>
-                <strong style="font-size: 18px;">${code}</strong>
-                <br><br>
-                Si no solicitaste este cambio, puedes ignorar este correo.
-            </div>
-            <div style="text-align: center;">
-                <a href="https://example.com/reset-password?code=${code}" class="button">Restablecer Contraseña</a>
-            </div>
-            <div class="footer">
-                Si tienes algún problema, por favor contáctanos.<br>
-                &copy; 2025 ZonaDigital. Todos los derechos reservados.
-            </div>
+    <div style="font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f9; padding: 20px; border: 1px solid #ddd; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+        <h1 style="color: #2c3e50; font-size: 24px; margin-bottom: 20px;">Password Recovery</h1>
+        <p style="font-size: 16px; color: #555; line-height: 1.5;">
+          Hello, we received a request to reset your password. Use the verification code below to proceed:
+        </p>
+        <div style="display: inline-block; padding: 10px 20px; margin: 20px 0; font-size: 18px; font-weight: bold; color: #fff; background-color: #ff7f50; border-radius: 5px; border: 1px solid #e67e22;">
+          ${code}
         </div>
-    </body>
-    </html>
+        <p style="font-size: 14px; color: #777; line-height: 1.5;">
+          This code is valid for the next <strong>15 minutes</strong>. If you didn’t request this email, you can safely ignore it.
+        </p>
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+        <footer style="font-size: 12px; color: #aaa;">
+          If you need further assistance, please contact our support team at 
+          <a href="mailto:support@example.com" style="color: #3498db; text-decoration: none;">support@example.com</a>.
+        </footer>
+      </div>
     `;
 };
 
