@@ -20,11 +20,11 @@ passwordRecoveryController.requestCode = async (req, res) => {
         userFound = await clientsModel.findOne({ email });
 
         if (userFound) {
-            usertType = "client";
+            usertType = "clients";
         } else {
             userFound = await employeesModel.findOne({ email });
             if (userFound) {
-                usertType = "employee";
+                usertType = "employees";
             }
         }
 
@@ -114,13 +114,13 @@ passwordRecoveryController.newPassword = async (req, res) => {
 
         let updateUser;
 
-        if (usertType === "client") {
+        if (usertType === "clients") {
             updateUser = await clientsModel.findOneAndUpdate(
                 { email},
                 { password: hashedPassword},
                 { new: true}
             );
-        } else if (usertType === "employee") {
+        } else if (usertType === "employees") {
             updateUser = await employeesModel.findOneAndUpdate(
                 { email },
                 { password: hashedPassword },
