@@ -87,7 +87,7 @@ passwordRecoveryController.verifyCode = async (req, res) => {
             maxAge: 20 * 60 * 1000,
         });
 
-        res.json({message: "Códe verified successfully"});
+        res.json({message: "Code verified successfully"});
 
     } catch (error) {
         console.error("Error al verificar el código:", error);
